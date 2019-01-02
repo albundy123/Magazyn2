@@ -3,7 +3,7 @@ package magazyn.model;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "przyrzadTyp")
+@DatabaseTable(tableName = "Typy")
 public class przyrzadTyp {
     @DatabaseField(generatedId = true)
     private Integer idTyp;

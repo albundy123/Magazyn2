@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="magazyn.controller.przyrzadyWidokKontroler">
+   <children>
+      <HBox prefHeight="44.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="dodajNowyPrzyrzadButton" mnemonicParsing="false" onAction="#dodajNowyPrzyrzad" text="Nowy">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="edytujPrzyrzadButton" mnemonicParsing="false" text="Edytuj">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="przyrzadyTableView" prefHeight="263.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="idPrzyrzaduColumn" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Lp." />
+          <TableColumn fx:id="nazwaPrzyrzaduColumn" prefWidth="75.0" text="Nazwa" />
+            <TableColumn fx:id="typPrzyrzaduColumn" prefWidth="75.0" text="Typ" />
+            <TableColumn fx:id="zakresPrzyrzaduColumn" prefWidth="75.0" text="Zakres" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <HBox prefHeight="40.0">
+         <children>
+            <Label text="Nazwa przyrządu: ">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="nazwaPrzyrzaduLabel" text="Label">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="15.0" right="30.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="40.0">
+         <children>
+            <Label text="Typ przyrządu:      ">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="typPrzyrzaduLabel" text="Label">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="15.0" right="30.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="40.0">
+         <children>
+            <Label text="Zakres przyrządu: ">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="zakresPrzyrzaduLabel" text="Label">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="15.0" right="30.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</VBox>

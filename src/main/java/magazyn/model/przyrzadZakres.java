@@ -4,7 +4,7 @@ package magazyn.model;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "przyrzadZakres")
+@DatabaseTable(tableName = "Zakresy")
 public class przyrzadZakres {
     @DatabaseField(generatedId = true)
     private Integer idZakres;
