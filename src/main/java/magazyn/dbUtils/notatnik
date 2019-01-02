@@ -1,0 +1,42 @@
+@FXML
+    private ComboBox<String> nazwaComboBox;
+    @FXML
+    private ChoiceBox<String> nazwaChoiceBox;
+    @FXML
+    private TextField nic;
+    @FXML
+    ObservableList<String> items = FXCollections.observableArrayList("One", "Two", "Three", "Four", "Five", "Six",
+            "Seven", "Eight", "Nine", "Ten");
+    FilteredList<String> filteredItems = new FilteredList<String>(items, p -> true);
+    @FXML
+    private void initialize(){
+        System.out.println("Jestem funkcją initialize obiektu klasy nazwaPrzyrzaduWidokKontroler");
+        nazwaComboBox.setEditable(true);
+        //nazwaComboBox.getItems().addAll("Ciśnieniomierz elektroniczny","Przetwornik ciśnienia");
+       // nazwaChoiceBox.getItems().addAll("Ciśnieniomierz elektroniczny","Przetwornik ciśnienia");
+        nazwaComboBox.getEditor().textProperty().addListener((v, oldValue, newValue) -> {
+            final TextField editor = nazwaComboBox.getEditor();
+            final String selected = nazwaComboBox.getSelectionModel().getSelectedItem();
+            if (selected == null || !selected.equals(editor.getText())) {
+                filteredItems.setPredicate(item -> {
+                    // We return true for any items that starts with the
+                    // same letters as the input. We use toUpperCase to
+                    // avoid case sensitivity.
+                    if (item.toUpperCase().startsWith(newValue.toUpperCase())) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                });
+            }
+
+        });
+
+
+
+
+        nazwaComboBox.setItems(filteredItems);
+
+
+
+    }
